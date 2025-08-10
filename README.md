@@ -1,33 +1,54 @@
-# 🏏 IPL Win Percentage Predictor
+# 🏏 IPL Win Predictor
 
-A **Streamlit web app** that predicts the win percentage of two IPL teams based on the current match situation using a Machine Learning model trained in Python.
+A machine learning-powered web application built with **Streamlit** that predicts the winning probability of IPL teams based on live match details such as batting team, bowling team, target, and current score.
+
+🔗 **Live App:** [IPL Win Predictor](https://ipl-win-predictor-dcqchja92nz9tusrquvzgb.streamlit.app/)
 
 ---
 
-## 📖 How This Project Was Made
+## 🚀 Features
 
-### **1. Data Collection**
-- Collected IPL match data from Kaggle.
-- Loaded it into **Pandas DataFrames** for analysis.
+- Predict winning probability in real time
+- User-friendly **Streamlit** interface
+- Uses IPL match data for training
+- Takes into account current score, overs, wickets, and target
+- Deployed on **Streamlit Cloud**
 
-### **2. Data Preprocessing (in Jupyter Notebook)**
-- Handled missing values.
-- Encoded categorical variables (teams, city, toss decision).
-- Created new features:
-  - `runs_left` = target - current score
-  - `balls_left` = 120 - overs_completed × 6
-  - `wickets_left` = 10 - wickets_fallen
-  - `crr` = current run rate
-  - `rrr` = required run rate
-- Split data into train and test sets.
+---
 
-### **3. Model Training**
-- Used **Logistic Regression / Random Forest** from `scikit-learn`.
-- Trained on historical IPL match data.
-- Evaluated with **accuracy** and **confusion matrix**.
+## 📊 How It Works
 
-### **4. Saving the Model**
-- Saved the trained model as a `.pkl` file using `pickle`:
-```python
-import pickle
-pickle.dump(model, open('model.pkl', 'wb'))
+1. **Data Preparation** – IPL historical data is cleaned and preprocessed  
+2. **Feature Engineering** – Extract relevant match stats (run rate, wickets left, etc.)  
+3. **Model Training** – A machine learning model predicts probabilities for both teams  
+4. **Web App** – Model integrated with Streamlit for easy interaction  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python**
+- **Pandas, NumPy**
+- **Scikit-learn**
+- **Streamlit**
+- **Matplotlib / Seaborn** (for data visualization)
+
+---
+IPL_PREDICTION/
+│
+├── app.py # Main Streamlit app (entry point)
+├── model.pkl # Trained machine learning model file
+├── requirements.txt # Python dependencies required for the project
+├── README.md # Project documentation
+└── data/ # Dataset folder containing IPL match data
+├── ipl_dataset.csv # Processed/cleaned dataset
+└── raw/ # (Optional) Raw IPL data before preprocessing
+
+
+
+--
+
+
+
+## 📂 Project Structure
+
